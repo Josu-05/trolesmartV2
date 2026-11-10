@@ -26,10 +26,10 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => 'gateway01.us-west-2.prod.aws.tidbcloud.com',
-        'username'     => 'tdKMHJDFbeZZQ6p.root',
-        'password'     => 'OFnQZrXwm67obafI',
-        'database'     => 'trolesmart',
+        'hostname'     => 'localhost',
+        'username'     => 'root',
+        'password'     => '',
+        'database'     => 'trolesmart_db',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
@@ -37,20 +37,13 @@ class Database extends Config
         'charset'      => 'utf8mb4',
         'DBCollat'     => 'utf8mb4_general_ci',
         'swapPre'      => '',
-        'encrypt' => [
-            'ssl_verify' => false,
-        ],
+        'encrypt'      => false,
         'compress'     => false,
         'strictOn'     => false,
         'failover'     => [],
-        'port'         => 4000,
+        'port'         => 3306,
         'numberNative' => false,
         'foundRows'    => false,
-        'dateFormat'   => [
-            'date'     => 'Y-m-d',
-            'datetime' => 'Y-m-d H:i:s',
-            'time'     => 'H:i:s',
-        ],
     ];
 
     //    /**
