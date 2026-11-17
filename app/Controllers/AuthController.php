@@ -23,7 +23,10 @@ class AuthController extends BaseController
             ->first();
 
         if(!$usuario){
-            return redirect()->back()->with('error', 'Contraseña Incorrecta');
+            return redirect()->back()->with(
+                'error',
+                'Correo o contraseña incorrectos'
+            );
         }
 
         if(!password_verify($password, $usuario['password'])) {

@@ -70,6 +70,9 @@ $routes->get('/ruta-estacion/edit/(:num)','RutaEstacionController::edit/$1');
 $routes->post('/ruta-estacion/update/(:num)','RutaEstacionController::update/$1');
 
 //login
-$routes->get('/login''AuthController::index');
+$routes->get('/login','AuthController::index');
 $routes->post('/login', 'AuthController::login');
 $routes->get('/logout', 'AuthController::logout');
+$routes->get('/panel', function () {
+    return 'Panel protegido';
+}, ['filter' => 'auth']);
