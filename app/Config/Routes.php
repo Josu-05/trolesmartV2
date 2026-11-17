@@ -76,3 +76,8 @@ $routes->get('/logout', 'AuthController::logout');
 $routes->get('/panel', function () {
     return 'Panel protegido';
 }, ['filter' => 'auth']);
+
+//reportes
+$routes->get('/reportes', 'ReporteController::index');
+$routes->get('/reportes/create', 'ReporteController::create');
+$routes->post('/reportes/store', 'ReporteController::store');
