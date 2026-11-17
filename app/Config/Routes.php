@@ -7,9 +7,13 @@ use CodeIgniter\Router\RouteCollection;
 
 $routes->get('/testdb', 'TestDB::index');
 
+//home>
+
 $routes->get('/', function () {
     return view('home');
 });
+
+//rutas
 
 $routes->get('/rutas', 'RutaController::index');
 
@@ -23,6 +27,8 @@ $routes->post('/rutas/update/(:num)', 'RutaController::update/$1');
 
 $routes->get('/rutas/delete/(:num)', 'RutaController::delete/$1');
 
+//estaciones
+
 $routes->get('/estaciones', 'EstacionController::index');
 
 $routes->get('/estaciones/create', 'EstacionController::create');
@@ -34,6 +40,8 @@ $routes->get('/estaciones/edit/(:num)', 'EstacionController::edit/$1');
 $routes->post('/estaciones/update/(:num)', 'EstacionController::update/$1');
 
 $routes->get('/estaciones/delete/(:num)', 'EstacionController::delete/$1');
+
+//unidades
 
 $routes->get('/unidades', 'UnidadController::index');
 
@@ -47,33 +55,21 @@ $routes->post('/unidades/update/(:num)', 'UnidadController::update/$1');
 
 $routes->get('/unidades/delete/(:num)', 'UnidadController::delete/$1');
 
-$routes->get(
-    '/ruta-estacion',
-    'RutaEstacionController::index'
-);
+//ruta-estacion
 
-$routes->get(
-    '/ruta-estacion/create',
-    'RutaEstacionController::create'
-);
+$routes->get('/ruta-estacion','RutaEstacionController::index');
 
-$routes->post(
-    '/ruta-estacion/store',
-    'RutaEstacionController::store'
-);
+$routes->get('/ruta-estacion/create','RutaEstacionController::create');
 
-$routes->get(
-    '/ruta-estacion/delete/(:num)',
-    'RutaEstacionController::delete/$1'
-);
+$routes->post('/ruta-estacion/store','RutaEstacionController::store');
 
+$routes->get('/ruta-estacion/delete/(:num)','RutaEstacionController::delete/$1');
 
-$routes->get(
-    '/ruta-estacion/edit/(:num)',
-    'RutaEstacionController::edit/$1'
-);
+$routes->get('/ruta-estacion/edit/(:num)','RutaEstacionController::edit/$1');
 
-$routes->post(
-    '/ruta-estacion/update/(:num)',
-    'RutaEstacionController::update/$1'
-);
+$routes->post('/ruta-estacion/update/(:num)','RutaEstacionController::update/$1');
+
+//login
+$routes->get('/login''AuthController::index');
+$routes->post('/login', 'AuthController::login');
+$routes->get('/logout', 'AuthController::logout');
