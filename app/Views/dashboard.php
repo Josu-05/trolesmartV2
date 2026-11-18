@@ -62,11 +62,15 @@
         </li>
 
         <li>
-            Reportar Incidencias
+            <a href="/reportes/create">
+                Crear Reporte
+            </a>
         </li>
 
         <li>
-            Ver Mis Reportes
+            <a href="/mis-reportes">
+                Mis Reportes
+            </a>
         </li>
 
     </ul>

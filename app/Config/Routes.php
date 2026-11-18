@@ -27,6 +27,10 @@ $routes->post('/rutas/update/(:num)', 'RutaController::update/$1');
 
 $routes->get('/rutas/delete/(:num)', 'RutaController::delete/$1');
 
+$routes->get('/consultar-rutas','ConsultaController::rutas');
+
+$routes->get('/ruta-recorrido/(:num)','ConsultaController::recorrido/$1');
+
 //estaciones
 
 $routes->get('/estaciones', 'EstacionController::index');
@@ -40,6 +44,8 @@ $routes->get('/estaciones/edit/(:num)', 'EstacionController::edit/$1');
 $routes->post('/estaciones/update/(:num)', 'EstacionController::update/$1');
 
 $routes->get('/estaciones/delete/(:num)', 'EstacionController::delete/$1');
+
+$routes->get('/consultar-estaciones','ConsultaController::estaciones');
 
 //unidades
 
@@ -81,3 +87,5 @@ $routes->get('/panel', function () {
 $routes->get('/reportes', 'ReporteController::index');
 $routes->get('/reportes/create', 'ReporteController::create');
 $routes->post('/reportes/store', 'ReporteController::store');
+$routes->get('/mis-reportes', 'ReporteController::misReportes');
+$routes->post('/reportes/cambiar-estado/(:num)','ReporteController::cambiarEstado/$1');

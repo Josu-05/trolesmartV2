@@ -17,6 +17,7 @@
         <th>Tipo</th>
         <th>Descripción</th>
         <th>Estado</th>
+        <th>Cambiar Estado</th>
     </tr>
 
     <?php foreach($reportes as $reporte): ?>
@@ -34,6 +35,39 @@
             <td><?= $reporte['descripcion'] ?></td>
 
             <td><?= $reporte['estado'] ?></td>
+
+            <td>
+
+                <form
+                    action="/reportes/cambiar-estado/<?= $reporte['id'] ?>"
+                    method="post">
+
+                    <select name="estado">
+
+                        <option value="Pendiente"
+                            <?= ($reporte['estado'] == 'Pendiente') ? 'selected' : '' ?>>
+                            Pendiente
+                        </option>
+
+                        <option value="En Proceso"
+                            <?= ($reporte['estado'] == 'En Proceso') ? 'selected' : '' ?>>
+                            En Proceso
+                        </option>
+
+                        <option value="Resuelto"
+                            <?= ($reporte['estado'] == 'Resuelto') ? 'selected' : '' ?>>
+                            Resuelto
+                        </option>
+
+                    </select>
+
+                    <button type="submit">
+                        Actualizar
+                    </button>
+
+                </form>
+
+            </td>
 
         </tr>
 
