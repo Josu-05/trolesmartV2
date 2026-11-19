@@ -26,9 +26,9 @@
 
             <td><?= $reporte['id'] ?></td>
 
-            <td><?= $reporte['usuario_id'] ?></td>
+            <td><?= $reporte['usuario_nombre'] ?></td>
 
-            <td><?= $reporte['estacion_id'] ?></td>
+            <td><?= $reporte['estacion_nombre'] ?></td>
 
             <td><?= $reporte['tipo'] ?></td>
 

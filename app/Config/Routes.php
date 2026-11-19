@@ -13,6 +13,9 @@ $routes->get('/', function () {
     return view('home');
 });
 
+//dashboard
+$routes->get('/', 'DashboardController::index');
+
 //rutas
 
 $routes->get('/rutas', 'RutaController::index');

@@ -6,9 +6,26 @@ use App\Models\ReporteModel;
 use App\Models\EstacionModel;
 
 class ReporteController extends BaseController{
-    public function index(){
+    public function index()
+    {
         $reporteModel = new ReporteModel();
-        $data['reportes'] = $reporteModel-> findAll();
+
+        $data['reportes'] = $reporteModel
+            ->select('
+                reportes.*,
+                usuarios.nombre AS usuario_nombre,
+                estaciones.nombre AS estacion_nombre
+            ')
+            ->join(
+                'usuarios',
+                'usuarios.id = reportes.usuario_id'
+            )
+            ->join(
+                'estaciones',
+                'estaciones.id = reportes.estacion_id'
+            )
+            ->findAll();
+
         return view('reportes/index', $data);
     }
 
@@ -38,8 +55,19 @@ class ReporteController extends BaseController{
     {
         $reporteModel = new ReporteModel();
 
-        $data['reportes'] = $reporteModel
-            ->where('usuario_id', session()->get('id'))
+            $data['reportes'] = $reporteModel
+            ->select('
+                reportes.*,
+                estaciones.nombre AS estacion_nombre
+            ')
+            ->join(
+                'estaciones',
+                'estaciones.id = reportes.estacion_id'
+            )
+            ->where(
+                'usuario_id',
+                session()->get('id')
+            )
             ->findAll();
 
         return view('reportes/mis_reportes', $data);
