@@ -203,11 +203,15 @@
     <ul>
 
         <li>
-            Consultar Rutas
+            <a href="/consultar-rutas">
+                Consultar Rutas
+            </a>
         </li>
 
         <li>
-            Consultar Estaciones
+            <a href="/consultar-estaciones">
+                Consultar Estaciones
+            </a>
         </li>
 
         <li>

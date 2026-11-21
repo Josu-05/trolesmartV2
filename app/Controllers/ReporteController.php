@@ -47,8 +47,11 @@ class ReporteController extends BaseController{
             'estado' => 'Pendiente'
         ]);
 
-        return redirect()->to('/reportes')
-                         ->with('success','Reporte enviado correctamente');
+        return redirect()->to('/mis-reportes')
+                 ->with(
+                     'success',
+                     'Reporte enviado correctamente'
+                 );
     }
     
     public function misReportes()
