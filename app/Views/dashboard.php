@@ -124,6 +124,97 @@
 
     <hr>
 
+    <h3>Gestión de Congestión</h3>
+
+    <?php if($congestionCritica): ?>
+
+        <p>
+            Estación:
+            <?= $congestionCritica['nombre'] ?>
+        </p>
+
+        <p>
+            Reportes de Congestión:
+            <?= $congestionCritica['total_congestion'] ?>
+        </p>
+
+        <p>
+
+            <?php
+
+            if($congestionCritica['total_congestion'] >= 10)
+            {
+                echo '🚎 Asignar 2 unidades adicionales';
+            }
+            elseif($congestionCritica['total_congestion'] >= 5)
+            {
+                echo '🚎 Asignar 1 unidad adicional';
+            }
+            else
+            {
+                echo '✅ Operación normal';
+            }
+
+            ?>
+
+        </p>
+
+    <?php else: ?>
+
+        <p>
+            No existen reportes de congestión.
+        </p>
+
+    <?php endif; ?>
+
+    <hr>
+
+    <h4>Expresos Disponibles</h4>
+
+    <?php if(!empty($expresosDisponibles)): ?>
+
+        <table border="1" cellpadding="8">
+
+            <tr>
+                <th>Código</th>
+                <th>Estado</th>
+                <th>Acción</th>
+            </tr>
+
+            <?php foreach($expresosDisponibles as $expreso): ?>
+
+                <tr>
+
+                    <td>
+                        <?= $expreso['codigo'] ?>
+                    </td>
+
+                    <td>
+                        <?= $expreso['estado'] ?>
+                    </td>
+
+                    <td>
+
+                        <a href="/activar-expreso/<?= $expreso['id'] ?>">
+                            Activar Expreso
+                        </a>
+
+                    </td>
+
+                </tr>
+
+            <?php endforeach; ?>
+
+        </table>
+
+    <?php else: ?>
+
+        <p>
+            No existen expresos disponibles.
+        </p>
+
+    <?php endif; ?>
+
     <h3>Últimos Reportes</h3>
 
     <table border="1" cellpadding="8">

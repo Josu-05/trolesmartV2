@@ -5,6 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /** @var RouteCollection $routes */
 
 $routes->get('/testdb', 'TestDB::index');
+$routes->get('/test-tidb','TestDB::testTiDB');
 
 // =====================
 // LOGIN
@@ -108,6 +109,7 @@ $routes->group('', ['filter' => 'admin'], function($routes) {
     $routes->get('/unidades/edit/(:num)', 'UnidadController::edit/$1');
     $routes->post('/unidades/update/(:num)', 'UnidadController::update/$1');
     $routes->get('/unidades/delete/(:num)', 'UnidadController::delete/$1');
+    $routes->get('/activar-expreso/(:num)','DashboardController::activarExpreso/$1');
 
     // Ruta Estación
 
