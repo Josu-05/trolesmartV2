@@ -97,3 +97,7 @@ foreach($rutaCompleta as $parada):
 <br>
 
 <?php endforeach; ?>
+
+<a href="/">
+    Volver al Dashboard
+</a>

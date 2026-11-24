@@ -61,3 +61,7 @@
     <?php endforeach; ?>
 
 </table>
+
+<a href="/">
+    Volver al Dashboard
+</a>
